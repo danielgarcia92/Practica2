@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Punto4</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="ladocu">Lado</string>
+    <string name="base">Base</string>
+    <string name="altura">Altura</string>
+    <string name="radio">Radio</string>
+    <string name="resultado">Resultado</string>
+    <string name="emptycuadro">Por favor ingrese el lado del cuadrado</string>
+    <string name="emptytriangulo">Ingrese los datos para calcular el área del triángulo</string>
+    <string name="emptyrectangulo">Ingrese los datos para calcular el área del rectángulo</string>
+    <string name="emptycirculo">Por favor ingrese el radio del círculo</string>
+</resources>

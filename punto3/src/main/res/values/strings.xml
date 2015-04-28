@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Punto3</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="quiz">Quices (15%)</string>
+    <string name="expo">Exposicones (10%)</string>
+    <string name="lab">Practicas de laboratorio (25%)</string>
+    <string name="pf">Proyecto final (35%)</string>
+    <string name="nota">Nota Final</string>
+
+</resources>

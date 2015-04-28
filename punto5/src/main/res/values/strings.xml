@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Punto5</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="nombre">Nombre</string>
+    <string name="hint_nombre">Digite el nombre</string>
+    <string name="correo">Correo</string>
+    <string name="hint_correo">Digite el correo</string>
+    <string name="tel">Telefono</string>
+    <string name="sexo">Sexo</string>
+    <string name="fecha">Fecha de nacimiento</string>
+    <string name="deporte">Deporte</string>
+    <string name="city">Ciudad</string>
+    <string name="hint_tel">Digite el Telefono</string>
+    <string name="boton">OK</string>
+    <string name="rbmasculino">Masculino</string>
+    <string name="rbfemenino">Femenino</string>
+    <string name="resultado">Resultado</string>
+    <string name="tonCreate">onCreate</string>
+    <string name="tonStart">onStart</string>
+    <string name="tonStop">onStop</string>
+    <string name="tonResume">onRestart</string>
+    <string name="tonDestroy">onDestroy</string>
+    <string name="tonRestart">onRestart</string>
+    <string name="tonPause">onPause</string>
+    <string name="cambiarNombre">Ingrese nuevo nombre</string>
+    <string name="tAviso">Aviso: Moviles Udea</string>
+    <string-array name="ciudades">
+        <item>Medellin</item>
+        <item>Bogota</item>
+        <item>Cali</item>
+        <item>Valledupar</item>
+        <item>Cartagena</item>
+        <item>Barranquilla</item>
+        <item>Ibague</item>
+        <item>Tolima</item>
+        <item>Sincelejo</item>
+        <item>Leticia</item>
+        <item>Casanare</item>
+        <item>Pereira</item>
+        <item>otro</item>
+    </string-array>
+</resources>
