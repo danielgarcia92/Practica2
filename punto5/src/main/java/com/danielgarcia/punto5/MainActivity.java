@@ -1,5 +1,6 @@
 package com.danielgarcia.punto5;
 
+import android.app.DatePickerDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,12 +10,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener{
 
@@ -22,12 +26,14 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     Spinner spinner;
     TextView mytext;
     String ge;
+    DateFormat formate=DateFormat.getDateInstance();
+    Calendar calendar= Calendar.getInstance();
 
     public void onRadioButtonClicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Identificar cuál RadioButton fue seleccionado
+        // RadioButton
         switch (view.getId()) {
             case R.id.radio_masculino:
                 if (checked) {
@@ -67,27 +73,21 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         }
     }
 
-    public void setDate(View view) {
-        PickerDialogs pickerDialogs = new PickerDialogs();
-        pickerDialogs.show(getFragmentManager(), "date_picker");
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Toast.makeText(this, getResources().getString(R.string.tonCreate), Toast.LENGTH_LONG).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText eNombre = (EditText) findViewById(R.id.eNombre);
-        final EditText eCorreo = (EditText) findViewById(R.id.eCorreo);
+        final TextView fecha     = (TextView) findViewById(R.id.tfecha);
+        final EditText eNombre   = (EditText) findViewById(R.id.eNombre);
+        final EditText eCorreo   = (EditText) findViewById(R.id.eCorreo);
         final EditText eTelefono = (EditText) findViewById(R.id.eTel);
-        final TextView tName = (TextView) findViewById(R.id.tNombre);
-        final TextView tMail = (TextView) findViewById(R.id.tCorreo);
-        final TextView tTel = (TextView) findViewById(R.id.tTel);
-        final TextView tsex = (TextView) findViewById(R.id.tsex);
-        final TextView tcity = (TextView) findViewById(R.id.tcity);
-        final TextView tdeporte = (TextView) findViewById(R.id.tdeporte);
-
+        final TextView tName     = (TextView) findViewById(R.id.tNombre);
+        final TextView tMail     = (TextView) findViewById(R.id.tCorreo);
+        final TextView tTel      = (TextView) findViewById(R.id.tTel);
+        final TextView tsex      = (TextView) findViewById(R.id.tsex);
+        final TextView tcity     = (TextView) findViewById(R.id.tcity);
+        final TextView tdeporte  = (TextView) findViewById(R.id.tdeporte);
 
         Button boton = (Button) findViewById(R.id.boton);
 
@@ -97,6 +97,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 tName.setText(eNombre.getText());
                 tMail.setText(eCorreo.getText());
                 tTel.setText(eTelefono.getText());
+                fecha.setText(formate.format(calendar.getTime()));
                 ge=spinner.getSelectedItem().toString();
                 tcity.setText(ge);
                 if (sex=='1')
@@ -119,6 +120,22 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.ciudades, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
+    }
+
+    DatePickerDialog.OnDateSetListener d=new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+            calendar.set(Calendar.YEAR,year);
+            calendar.set(Calendar.MONTH,monthOfYear);
+            calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+
+        }
+    };
+
+    public void setDate (View v){
+        new DatePickerDialog(MainActivity.this,d,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+
     }
 
 

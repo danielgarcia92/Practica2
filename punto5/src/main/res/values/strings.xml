@@ -25,8 +25,15 @@
     <string name="tonRestart">onRestart</string>
     <string name="tonPause">onPause</string>
     <string name="cambiarNombre">Ingrese nuevo nombre</string>
+    <string name="ingfecha">Ingresar fecha de nacimiento</string>
     <string name="tAviso">Aviso: Moviles Udea</string>
+    <string name="futbol">Fútbol</string>
+    <string name="voleibol">Voleibol</string>
+    <string name="natacion">Natación</string>
+    <string name="basketball">Basketball</string>
+    <string name="editfecha">Fecha</string>
     <string-array name="ciudades">
+        <item>Seleccione una ciudad</item>
         <item>Medellin</item>
         <item>Bogota</item>
         <item>Cali</item>
