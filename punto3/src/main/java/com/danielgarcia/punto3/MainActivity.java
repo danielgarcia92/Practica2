@@ -8,36 +8,67 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    private EditText equiz = null;
+    private EditText eexpo = null;
+    private EditText elab = null;
+    private EditText epf = null;
+    private TextView enota = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText equiz = (EditText) findViewById(R.id.equiz);
-        final EditText eexpo = (EditText) findViewById(R.id.eexpo);
-        final EditText elab = (EditText) findViewById(R.id.elab);
-        final EditText epf = (EditText) findViewById(R.id.epf);
-        final TextView enota = (TextView) findViewById(R.id.enota);
+        equiz = (EditText) findViewById(R.id.equiz);
+        eexpo = (EditText) findViewById(R.id.eexpo);
+        elab  = (EditText) findViewById(R.id.elab);
+        epf   = (EditText) findViewById(R.id.epf);
+        enota = (TextView) findViewById(R.id.enota);
 
-        Button boton = (Button) findViewById(R.id.ebutton);
+    }
 
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                float op1 = Float.parseFloat(equiz.getText().toString());
-                float op2 = Float.parseFloat(eexpo.getText().toString());
-                float op3 = Float.parseFloat(elab.getText().toString());
-                float op4 = Float.parseFloat(epf.getText().toString());
-                double rw;
-                rw = (op1 * 0.15) + (op2 * 0.1) + (op3 * 0.4) + (op4 * 0.35);
-                String mytext = Double.toString(rw);
-                enota.setText(mytext);
-            }
-        });
+    public void calcular (View v) {
+        float op1 = Float.parseFloat(equiz.getText().toString());
+        float op2 = Float.parseFloat(eexpo.getText().toString());
+        float op3 = Float.parseFloat(elab.getText().toString());
+        float op4 = Float.parseFloat(epf.getText().toString());
+        double rw;
+
+        if (op1 > 5)
+            Toast.makeText(this, getResources().getString(R.string.quizm5), Toast.LENGTH_SHORT).show();
+
+        if (op2 > 5)
+            Toast.makeText(this, getResources().getString(R.string.expom5), Toast.LENGTH_SHORT).show();
+
+        if (op3 > 5)
+            Toast.makeText(this, getResources().getString(R.string.labm5), Toast.LENGTH_SHORT).show();
+
+        if (op4 > 5)
+            Toast.makeText(this, getResources().getString(R.string.pfm5), Toast.LENGTH_SHORT).show();
+
+        if (op1<=5 && op2<=5 && op3<=5 && op4<=5) {
+            rw = (op1 * 0.15) + (op2 * 0.1) + (op3 * 0.4) + (op4 * 0.35);
+            String mytext = Double.toString(rw);
+            enota.setText(mytext);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("ENOTA", enota.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        enota.setText(savedInstanceState.getString("ENOTA"));
     }
 
     @Override

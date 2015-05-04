@@ -76,8 +76,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         if (mtriangulo == '1') {
-            if ((ebase.getText().toString().trim().length() == 0)||(ealtura.getText().toString().trim().length() == 0))
-                Toast.makeText(this, getResources().getString(R.string.emptytriangulo), Toast.LENGTH_SHORT).show();
+            if (ebase.getText().toString().trim().length() == 0)
+                Toast.makeText(this, getResources().getString(R.string.emptytriangulobase), Toast.LENGTH_SHORT).show();
+            else
+                if (ealtura.getText().toString().trim().length() == 0)
+                    Toast.makeText(this, getResources().getString(R.string.emptytrianguloaltura), Toast.LENGTH_SHORT).show();
             else {
                 float op1 = Float.parseFloat(ebase.getText().toString());
                 float op2 = Float.parseFloat(ealtura.getText().toString());
@@ -89,8 +92,10 @@ public class MainActivity extends ActionBarActivity {
         }
 
         if (mrectangulo == '1'){
-            if ((ebase.getText().toString().trim().length() == 0)||(ealtura.getText().toString().trim().length() == 0))
-                Toast.makeText(this, getResources().getString(R.string.emptyrectangulo), Toast.LENGTH_SHORT).show();
+            if (ebase.getText().toString().trim().length() == 0)
+                Toast.makeText(this, getResources().getString(R.string.emptyrectangulobase), Toast.LENGTH_SHORT).show();
+            else if (ealtura.getText().toString().trim().length() == 0)
+                Toast.makeText(this, getResources().getString(R.string.emptyrectanguloaltura), Toast.LENGTH_SHORT).show();
             else {
                 float op1 = Float.parseFloat(ebase.getText().toString());
                 float op2 = Float.parseFloat(ealtura.getText().toString());

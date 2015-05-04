@@ -12,21 +12,27 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
             <EditText
                 android:id="@+id/eladocu"
-                android:layout_width="170dp"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:hint="@string/ladocu"
                 android:inputType="phone"
                 android:textSize="20sp" />
 
-            <RadioButton
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/eradio"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Cuadro"
-                android:id="@+id/radio_cuadro"
-                android:onClick="onRadioButtonClicked"/>
+                android:hint="@string/radio"
+                android:inputType="phone"
+                android:textSize="20sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -50,39 +56,35 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Triangulo"
-                android:id="@+id/radio_triangulo"
-                android:layout_alignParentTop="true"
-                android:onClick="onRadioButtonClicked"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Rectángulo"
-                android:id="@+id/radio_rectangulo"
-                android:onClick="onRadioButtonClicked"/>
-
-
-        <EditText
-            android:id="@+id/eradio"
-            android:layout_width="fill_parent"
+        <RadioButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/radio"
-            android:inputType="phone"
-            android:textSize="20sp" />
+            android:hint="@string/cuadrado"
+            android:id="@+id/radio_cuadro"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Círculo"
+            android:layout_weight="1"
+            android:hint="@string/triangulo"
+            android:id="@+id/radio_triangulo"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/rectangulo"
+            android:id="@+id/radio_rectangulo"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/circulo"
             android:id="@+id/radio_circulo"
-            android:layout_below="@+id/radioButton3"
             android:onClick="onRadioButtonClicked"/>
 
     </RadioGroup>
@@ -90,7 +92,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
+        android:text="@string/calcular"
+        android:textColor="@color/darkred"
         android:onClick="calcular"
         android:id="@+id/ecalcular"
         android:layout_gravity="center_horizontal" />

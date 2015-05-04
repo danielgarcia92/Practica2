@@ -3,10 +3,15 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="quiz">Quices (15%)</string>
-    <string name="expo">Exposicones (10%)</string>
-    <string name="lab">Practicas de laboratorio (25%)</string>
-    <string name="pf">Proyecto final (35%)</string>
+    <string name="quiz">Quices</string>
+    <string name="quizm5">La nota de los quices debe estar entre 0 y 5</string>
+    <string name="expo">Exposiciones</string>
+    <string name="expom5">La nota de las exposiciones debe estar entre 0 y 5</string>
+    <string name="lab">Laboratorio</string>
+    <string name="labm5">La nota del laboratorio debe estar entre 0 y 5</string>
+    <string name="pf">Proyecto</string>
+    <string name="pfm5">La nota del proyecto final debe estar entre 0 y 5</string>
     <string name="nota">Nota Final</string>
+    <string name="calcular">Calcular</string>
 
 </resources>

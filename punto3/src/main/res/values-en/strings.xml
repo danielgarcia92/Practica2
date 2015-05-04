@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Point 3</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="quiz">Quizzes</string>
+    <string name="expo">Expositions</string>
+    <string name="lab">Practices</string>
+    <string name="pf">Project</string>
+    <string name="nota">Final grade</string>
+    <string name="calcular">Calculate</string>
+
+</resources>

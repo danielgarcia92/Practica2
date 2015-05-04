@@ -1,5 +1,6 @@
 package com.danielgarcia.punto5;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -20,12 +21,13 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener{
+public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener{
 
+    private EditText eNombre,eCorreo, eTelefono;
+    private TextView mytext, fecha, tMail, tTel, tName, tcity, tdeporte, tsex;
+    String ge, sdeporte;
     char sex, check;
     Spinner spinner;
-    TextView mytext;
-    String ge;
     DateFormat formate=DateFormat.getDateInstance();
     Calendar calendar= Calendar.getInstance();
 
@@ -78,16 +80,17 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView fecha     = (TextView) findViewById(R.id.tfecha);
-        final EditText eNombre   = (EditText) findViewById(R.id.eNombre);
-        final EditText eCorreo   = (EditText) findViewById(R.id.eCorreo);
-        final EditText eTelefono = (EditText) findViewById(R.id.eTel);
-        final TextView tName     = (TextView) findViewById(R.id.tNombre);
-        final TextView tMail     = (TextView) findViewById(R.id.tCorreo);
-        final TextView tTel      = (TextView) findViewById(R.id.tTel);
-        final TextView tsex      = (TextView) findViewById(R.id.tsex);
-        final TextView tcity     = (TextView) findViewById(R.id.tcity);
-        final TextView tdeporte  = (TextView) findViewById(R.id.tdeporte);
+        fecha     = (TextView) findViewById(R.id.tfecha);
+        eNombre   = (EditText) findViewById(R.id.eNombre);
+        eCorreo   = (EditText) findViewById(R.id.eCorreo);
+        eTelefono = (EditText) findViewById(R.id.eTel);
+        tName     = (TextView) findViewById(R.id.tNombre);
+        tMail     = (TextView) findViewById(R.id.tCorreo);
+        tTel      = (TextView) findViewById(R.id.tTel);
+        tsex      = (TextView) findViewById(R.id.tsex);
+        tcity     = (TextView) findViewById(R.id.tcity);
+        tdeporte  = (TextView) findViewById(R.id.tdeporte);
+        sdeporte = tdeporte.getText().toString();
 
         Button boton = (Button) findViewById(R.id.boton);
 
@@ -138,6 +141,33 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("FECHA", fecha.getText().toString());
+        outState.putString("TMAIL", tMail.getText().toString());
+        outState.putString("TTEL", tTel.getText().toString());
+        outState.putString("TNAME", tName.getText().toString());
+        outState.putString("TCITY", tcity.getText().toString());
+        outState.putString("TDEPORTE", tdeporte.getText().toString());
+        outState.putString("TSEX", tsex.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        fecha.setText(savedInstanceState.getString("FECHA"));
+        tMail.setText(savedInstanceState.getString("TMAIL"));
+        tTel.setText(savedInstanceState.getString("TTEL"));
+        tName.setText(savedInstanceState.getString("TNAME"));
+        tcity.setText(savedInstanceState.getString("TCITY"));
+        tdeporte.setText(savedInstanceState.getString("TDEPORTE"));
+        tsex.setText(savedInstanceState.getString("TSEX"));
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -172,4 +202,5 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 }

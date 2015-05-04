@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
+    private TextView tresultado;
+
     public void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
         final EditText edig1 = (EditText) findViewById(R.id.edig1);
         final EditText edig2 = (EditText) findViewById(R.id.edig2);
-        final TextView tresultado = (TextView) findViewById(R.id.tresultado);
+        tresultado = (TextView) findViewById(R.id.tresultado);
         Button boton = (Button) findViewById(R.id.ecalcul);
         String mytext = null;
 
@@ -79,6 +81,20 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("TRESULTADO", tresultado.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        tresultado.setText(savedInstanceState.getString("TRESULTADO"));
     }
 
 

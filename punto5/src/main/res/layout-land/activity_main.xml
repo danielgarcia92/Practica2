@@ -4,34 +4,27 @@
     android:layout_margin="5sp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.8"
+            android:layout_weight="0.45"
             android:text="@string/nombre"
-            android:textColor="@color/blue"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/eNombre"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/hint_nombre"
             android:inputType="textPersonName"
             android:textSize="20sp" />
 
-    </LinearLayout>
-
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
         <RadioButton android:id="@+id/radio_masculino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,63 +48,61 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.8"
             android:text="@string/correo"
-            android:textColor="@color/blue"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/eCorreo"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/hint_correo"
             android:inputType="textEmailAddress"
             android:textSize="20sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.8"
             android:text="@string/tel"
-            android:textColor="@color/blue"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/eTel"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/hint_tel"
             android:inputType="phone"
             android:textSize="20sp" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/tbotonfecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/darkorange"
-        android:layout_gravity="center"
-        android:onClick="setDate"
-        android:text="@string/ingfecha" />
-
-    <Spinner
-        android:id="@+id/spinnerf"
-        android:layout_width="match_parent"
-        android:textColor="@color/goldenrod"
-        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/tbotonfecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkorange"
+            android:layout_gravity="center"
+            android:onClick="setDate"
+            android:text="@string/ingfecha" />
+
+        <Spinner
+            android:id="@+id/spinnerf"
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <CheckBox
@@ -132,12 +123,6 @@
             android:layout_weight="1"
             android:onClick="onCheckboxClicked"
             android:text="@string/voleibol" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/checkBox3"
@@ -157,31 +142,35 @@
             android:layout_weight="1"
             android:onClick="onCheckboxClicked"
             android:text="@string/basketball" />
+
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <LinearLayout
-            android:layout_width="184dp"
+            android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/tNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
                 android:text="@string/nombre"
                 android:textSize="20sp" />
+
 
             <TextView
                 android:id="@+id/tTel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
                 android:text="@string/tel"
                 android:textSize="20sp" />
 
@@ -189,39 +178,13 @@
                 android:id="@+id/tsex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
                 android:text="@string/sexo"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tcity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blue"
-                android:text="@string/city"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tdeporte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blue"
-                android:text="@string/deporte"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tfecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blue"
-                android:text="@string/editfecha"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tCorreo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
                 android:text="@string/correo"
                 android:textSize="20sp" />
 
@@ -229,13 +192,35 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="76dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tcity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/city"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tdeporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/deporte"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tfecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/editfecha"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/boton"
-                android:layout_width="150sp"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/darkred"
                 android:layout_gravity="center"
